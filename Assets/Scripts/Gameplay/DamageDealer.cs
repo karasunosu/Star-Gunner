@@ -16,8 +16,6 @@ public class DamageDealer : MonoBehaviour
         if(hp != null) // object dang chua file la projectile
         {
             hp.TakeDamage(damage);
-            hp.PlayHitParticle();
-            hp.ShakeCam();
 
             if (isProjectile)
             {

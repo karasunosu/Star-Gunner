@@ -21,12 +21,16 @@ public class Shooter : MonoBehaviour
     [HideInInspector] public bool isFiring;
     Coroutine fireCoroutine;
 
+    AudioManager audioManager;
+
     void Start()
     {
         if (useEnemyAI)
         {
             isFiring = true;
         }
+
+        audioManager = FindFirstObjectByType<AudioManager>();
     }
 
     void Update()
@@ -59,6 +63,8 @@ public class Shooter : MonoBehaviour
 
             Rigidbody2D pjtRb = projectile.GetComponent<Rigidbody2D>();
             pjtRb.linearVelocity = transform.up * pjtSpeed; // transform.up se dieu huong theo mui ten xanh la (local) cua object 
+
+            audioManager.PlayShootSFX();
 
             Destroy(projectile, pjtLifeTime);
 

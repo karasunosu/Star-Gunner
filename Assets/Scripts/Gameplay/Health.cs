@@ -10,14 +10,22 @@ public class Health : MonoBehaviour
     [SerializeField] bool applyCamShake;
     CameraShake cam;
 
+    AudioManager audioManager;
+
     void Start()
     {
         cam = Camera.main.GetComponent<CameraShake>();
+        audioManager = FindFirstObjectByType<AudioManager>();
     }
 
     public void TakeDamage(int damage)
     {
         hp -= damage;
+
+        PlayHitParticle();
+        ShakeCam();
+        audioManager.PlayDamagedSFX();
+
         if(hp <= 0)
         {
             Die();
@@ -34,7 +42,7 @@ public class Health : MonoBehaviour
         return hp;
     }
 
-    public void PlayHitParticle()
+    void PlayHitParticle()
     {
         if(hitParticle != null)
         {
@@ -43,7 +51,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void ShakeCam()
+    void ShakeCam()
     {
         if (applyCamShake)
         {
