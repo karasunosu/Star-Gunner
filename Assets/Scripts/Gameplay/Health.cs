@@ -18,12 +18,16 @@ public class Health : MonoBehaviour
     ScoreValue scoreValue;
     ScoreKeeper scoreKeeper;
 
+    // LevelManager
+    LevelManager levelManager;
+
     void Start()
     {
         cam = Camera.main.GetComponent<CameraShake>();
         audioManager = FindFirstObjectByType<AudioManager>();
         scoreKeeper = FindFirstObjectByType<ScoreKeeper>();
         scoreValue = GetComponent<ScoreValue>();
+        levelManager = FindFirstObjectByType<LevelManager>();
     }
 
     public void TakeDamage(int damage)
@@ -44,7 +48,7 @@ public class Health : MonoBehaviour
     {
         if (isPlayer)
         {
-            print("game over");
+            levelManager.LoadGameOver();
         }
         else
         {

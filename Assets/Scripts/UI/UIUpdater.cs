@@ -20,7 +20,7 @@ public class UIUpdater : MonoBehaviour
 
     void Update()
     {
-        scoreText.text = scoreKeeper.GetScore().ToString("00000000");
+        scoreText.text = scoreKeeper.GetScore().ToString("000000000");
         hpSlider.value = playerHP.GetHealth();
     }
 }

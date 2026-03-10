@@ -29,11 +29,15 @@ public class ScoreKeeper : MonoBehaviour
     {
         score += amount;
         score = Mathf.Clamp(score, 0, int.MaxValue);
-        print(score);
     }
 
     public int GetScore()
     {
         return score;
+    }
+
+    public void ResetScore()
+    {
+        score = 0;
     }
 }
