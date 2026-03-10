@@ -50,3 +50,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cc17bf4c5775b354080916d28df3f9dd, type: 2}
   - {fileID: 11400000, guid: 3d070dd7998511b45b909af9f7cb92a3, type: 2}
   timeBetweenWaves: 0.2
+  isLooping: 1
