@@ -1,21 +1,29 @@
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 // Dat trong cac nhan vat co mau (player, enemy)
 
 public class Health : MonoBehaviour
 {
+    [SerializeField] bool isPlayer;
     [SerializeField] int hp;
-    [SerializeField] ParticleSystem hitParticle;
 
+    // UI
+    [SerializeField] ParticleSystem hitParticle;
     [SerializeField] bool applyCamShake;
     CameraShake cam;
-
     AudioManager audioManager;
+
+    // Score 
+    ScoreValue scoreValue;
+    ScoreKeeper scoreKeeper;
 
     void Start()
     {
         cam = Camera.main.GetComponent<CameraShake>();
         audioManager = FindFirstObjectByType<AudioManager>();
+        scoreKeeper = FindFirstObjectByType<ScoreKeeper>();
+        scoreValue = GetComponent<ScoreValue>();
     }
 
     public void TakeDamage(int damage)
@@ -34,6 +42,14 @@ public class Health : MonoBehaviour
 
     void Die()
     {
+        if (isPlayer)
+        {
+            print("game over");
+        }
+        else
+        {
+            scoreKeeper.AddScore(scoreValue.GetScoreValue());
+        }
         Destroy(gameObject);
     }
 

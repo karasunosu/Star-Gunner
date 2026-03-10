@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 8032769852341858521}
   - component: {fileID: -2105594857643376077}
   - component: {fileID: 8133037944568978700}
+  - component: {fileID: -6064476032207658709}
   m_Layer: 7
   m_Name: Enemy 1
   m_TagString: Untagged
@@ -189,8 +190,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d07a8dcd523e04f94c2cbcadc2e297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
+  isPlayer: 0
   hp: 20
   hitParticle: {fileID: 5651739804419983522, guid: 8e69c788bff91414f98a319857ed13a3, type: 3}
+  applyCamShake: 0
 --- !u!114 &8133037944568978700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +208,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DamageDealer
   damage: 10
   isProjectile: 0
+--- !u!114 &-6064476032207658709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610587967189033717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7890a1a4d1887c549800d452d4554739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreValue
+  score: 50
 --- !u!1 &1008216132680852244
 GameObject:
   m_ObjectHideFlags: 0
