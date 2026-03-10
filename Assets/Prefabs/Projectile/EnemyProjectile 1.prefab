@@ -202,4 +202,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5529783c1f382ba44b5aae103fdd8515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageDealer
+  hitParticle: {fileID: 0}
   damage: 10
+  isProjectile: 1

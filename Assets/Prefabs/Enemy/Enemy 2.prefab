@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   hp: 20
+  hitParticle: {fileID: 5651739804419983522, guid: 8e69c788bff91414f98a319857ed13a3, type: 3}
 --- !u!114 &5600633837387900285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageDealer
   damage: 10
+  isProjectile: 0
 --- !u!1 &2211412331485209409
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +193,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 5421734538833868612, guid: 35b1643ca2707de42a93801d086243d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

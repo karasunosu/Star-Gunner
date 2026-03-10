@@ -5,6 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] int hp;
+    [SerializeField] ParticleSystem hitParticle;
 
     public void TakeDamage(int damage)
     {
@@ -23,5 +24,14 @@ public class Health : MonoBehaviour
     public int GetHealth()
     {
         return hp;
+    }
+
+    public void PlayHitParticle()
+    {
+        if(hitParticle != null)
+        {
+            ParticleSystem particle = Instantiate(hitParticle, transform.position, Quaternion.identity);
+            Destroy(particle, particle.main.duration + particle.main.startLifetime.constantMax);
+        }
     }
 }

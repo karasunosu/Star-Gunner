@@ -7,14 +7,21 @@ public class DamageDealer : MonoBehaviour
 {
     [SerializeField] int damage;
 
+    [SerializeField] bool isProjectile;
+
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Health hp = collision.GetComponent<Health>();
+        Health hp = collision.GetComponent<Health>(); // enemy/player
 
-        if(hp != null)
+        if(hp != null) // object dang chua file la projectile
         {
             hp.TakeDamage(damage);
-            Destroy(gameObject); // projectile (cai nao khong co hp)
+            hp.PlayHitParticle();
+
+            if (isProjectile)
+            {
+                Destroy(gameObject); // projectile (cai nao khong co hp)
+            }
         }
     }
 }
