@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 15
-  verticalPadding: {x: -1, y: 1}
+  verticalPadding: {x: 2, y: 1}
   horizontalPadding: {x: 1, y: 1}
 --- !u!114 &-314210982489280426
 MonoBehaviour:
