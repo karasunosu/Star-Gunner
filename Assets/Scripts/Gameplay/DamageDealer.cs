@@ -17,6 +17,7 @@ public class DamageDealer : MonoBehaviour
         {
             hp.TakeDamage(damage);
             hp.PlayHitParticle();
+            hp.ShakeCam();
 
             if (isProjectile)
             {

@@ -7,6 +7,14 @@ public class Health : MonoBehaviour
     [SerializeField] int hp;
     [SerializeField] ParticleSystem hitParticle;
 
+    [SerializeField] bool applyCamShake;
+    CameraShake cam;
+
+    void Start()
+    {
+        cam = Camera.main.GetComponent<CameraShake>();
+    }
+
     public void TakeDamage(int damage)
     {
         hp -= damage;
@@ -32,6 +40,14 @@ public class Health : MonoBehaviour
         {
             ParticleSystem particle = Instantiate(hitParticle, transform.position, Quaternion.identity);
             Destroy(particle, particle.main.duration + particle.main.startLifetime.constantMax);
+        }
+    }
+
+    public void ShakeCam()
+    {
+        if (applyCamShake)
+        {
+            cam.Play();
         }
     }
 }
